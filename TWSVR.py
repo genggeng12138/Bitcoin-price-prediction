@@ -15,12 +15,6 @@ from sklearn.metrics import r2_score
 from sklearn.metrics import mean_absolute_error
 from sklearn.metrics import mean_absolute_percentage_error
 
-# __copyright__ = ""
-# __license__ = "GPL"
-# __version__ = "1.1"
-# __maintainer__ = "Arnav Kansal"
-# __email__ = "ee1130440@ee.iitd.ac.in"
-# __status__ = "Production"
 
 class TwinSVMRegressor(BaseEstimator, RegressorMixin):
     def __init__(self, Epsilon1=0.1, Epsilon2=0.1, C1=1, C2=1, kernel_type=0, kernel_param=1, regulz1=0.0001,
@@ -148,8 +142,3 @@ def test():
     tw_svr.fit(X_train, y_train)
     y_hat = tw_svr.predict(X_test)[:, 0]
     return y_hat
-# if __name__ == '__main__':
-#     t = timeit.timeit(stmt='test()', setup="from TWSVR import test, TwinSVMRegressor, create_data",
-#                       number=100)
-#     print(t)
-#20s

@@ -13,26 +13,6 @@ from sklearn.metrics import mean_absolute_error
 from sklearn.metrics import mean_absolute_percentage_error
 
 class LSSVR(BaseEstimator, RegressorMixin):
-    """Least Squares Support Vector Regression.
-    Parameters
-    ----------
-    C : float, default=2.0
-        Regularization parameter. The strength of the regularization is
-        inversely proportional to C. Must be strictly positive.
-    kernel : {'linear', 'rbf'}, default='linear'
-        Specifies the kernel type to be used in the algorithm.
-        It must be 'linear', 'rbf' or a callable.
-    gamma : float, default = None
-        Kernel coefficient for 'rbf'
-    Attributes
-    ----------
-    support_: boolean np.array of shape (n_samples,), default = None
-        Array for support vector selection.
-    alpha_ : array-like
-        Weight matrix
-    bias_ : array-like
-        Bias vector
-    """
 
     def __init__(self, C=2.0, kernel='linear', gamma=None):
         self.C = C
@@ -40,20 +20,6 @@ class LSSVR(BaseEstimator, RegressorMixin):
         self.gamma = gamma
 
     def fit(self, X, y, support=None):
-        """Fit the model according to the given training data.
-        Parameters
-        ----------
-        X : {array-like, sparse matrix} of shape (n_samples, n_features)
-            Training data
-        y : array-like of shape (n_samples,) or (n_samples, n_targets)
-            Target values.
-        support : boolean np.array of shape (n_samples,), default = None
-            Array for support vector selection.
-        Returns
-        -------
-        self : object
-            An instance of the estimator.
-        """
 
         X, y = check_X_y(X, y, multi_output=True, dtype='float')
 
@@ -96,17 +62,7 @@ class LSSVR(BaseEstimator, RegressorMixin):
         return self
 
     def predict(self, X):
-        """
-        Predict using the estimator.
-        Parameters
-        ----------
-        X : array-like or sparse matrix, shape (n_samples, n_features)
-            Samples.
-        Returns
-        -------
-        y : array-like of shape (n_samples,) or (n_samples, n_targets)
-            Returns predicted values.
-        """
+   
 
         if not hasattr(self, 'support_vectors_'):
             raise NotFittedError
@@ -189,4 +145,4 @@ def test():
     return y_hat
 
 
-# 285.652s
+
