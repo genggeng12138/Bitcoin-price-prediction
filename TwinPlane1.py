@@ -1,17 +1,9 @@
-#!/usr/bin/env python
-
 import numpy as np
 
 from numpy import linalg
 from cvxopt import solvers, matrix
 
 
-# __copyright__ = ""
-# __license__ = "GPL"
-# __version__ = "1.1"
-# __maintainer__ = "Arnav Kansal"
-# __email__ = "ee1130440@ee.iitd.ac.in"
-# __status__ = "Production"
 
 
 def Twin_plane_1(H, Y, C1, Epsi1, regulz1):

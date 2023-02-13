@@ -1,12 +1,7 @@
 import math
 import numpy as np
 
-#__copyright__ = ""
-#__license__ = "GPL"
-# __version__ = "1.1"
-# __maintainer__ = "Arnav Kansal"
-# __email__ = "ee1130440@ee.iitd.ac.in"
-# __status__ = "Production"
+
 
 
 def kernelfunction(Type, u, v, p):
