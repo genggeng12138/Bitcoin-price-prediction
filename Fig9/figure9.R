@@ -1,6 +1,6 @@
 library(readxl)
-data_b <- read_excel("C:/Users/mjgeng/Desktop/±ÈÌØ±Ò¼°ÆäÏà¹ØÊý¾Ý/1.xlsx")
-#Êý¾ÝÔ¤´¦Àí
+data_b <- read_excel("C:/Users/mjgeng/Desktop/æ¯”ç‰¹å¸åŠå…¶ç›¸å…³æ•°æ®/1.xlsx")
+#æ•°æ®é¢„å¤„ç†
 data.01<-ts(data_b$V1, frequency = 365,start = 2018)
 par(cex=1.5)
 plot(data.01,ylab="BTC",col="blue",lwd=2)
@@ -132,7 +132,7 @@ for(i in c(1:7)){
   legend("bottomleft",factor,lty=1,text.col="purple",col="purple",lwd=2)
 }
 
-#¹éÒ»»¯
+#å½’ä¸€åŒ–
 data.gui<-function(data){
   result<-(data-min(data,na.rm = T))/(max(data,na.rm = T)-min(data,na.rm = T))
   return(result)
@@ -145,7 +145,7 @@ for (i in c(1:29)) {
   dt1 <- as.data.frame(cbind(dt1,dt))
 }
 dt1
-write.csv(dt1,"¹éÒ»»¯ºóÊý¾Ý.csv")
+write.csv(dt1,"å½’ä¸€åŒ–åŽæ•°æ®.csv")
 
 
 
@@ -159,28 +159,28 @@ install.packages("Ckmeans.1d.dp")
 library(xgboost)
 library(Matrix)
 library(Ckmeans.1d.dp)
-#Ä£ÐÍÑµÁ·,½«Êý¾ÝÐÞ¸Ä³ÉÏ¡Êè¾ØÕó
-data_b<-read.csv("C:/Users/mjgeng/Desktop/±ÈÌØ±Ò¼°ÆäÏà¹ØÊý¾Ý/¹éÒ»»¯ºóÊý¾Ý.csv")
+#æ¨¡åž‹è®­ç»ƒ,å°†æ•°æ®ä¿®æ”¹æˆç¨€ç–çŸ©é˜µ
+data_b<-read.csv("C:/Users/mjgeng/Desktop/æ¯”ç‰¹å¸åŠå…¶ç›¸å…³æ•°æ®/å½’ä¸€åŒ–åŽæ•°æ®.csv")
 train_matrix<-sparse.model.matrix(V1 ~ .,data = data_b)
 train_label<-as.numeric(data_b$V1)
 train_label<-data_b$V1[1:1514]
-#·ÖÀë±äÁ¿ºÍ±êÇ©
+#åˆ†ç¦»å˜é‡å’Œæ ‡ç­¾
 fin<-list(data=train_matrix,label=train_label)
 dtrain<-xgb.DMatrix(data = fin$data,label = fin$label)
-#ÔËÓÃxgboostº¯Êý¶ÔÊý¾Ý½øÐÐ´¦Àí£¬Ñ°ÕÒµ½Ó°Ïì±ÈÌØ±Ò¼Û¸ñµÄ¹Ø¼üÐÔ±äÁ¿
+#è¿ç”¨xgboostå‡½æ•°å¯¹æ•°æ®è¿›è¡Œå¤„ç†ï¼Œå¯»æ‰¾åˆ°å½±å“æ¯”ç‰¹å¸ä»·æ ¼çš„å…³é”®æ€§å˜é‡
 xgb <- xgboost(data = dtrain,nround=250)
-#ÖØÒªÖØÒªÐÔÅÅÐò 
+#é‡è¦é‡è¦æ€§æŽ’åº 
 importance <- xgb.importance(train_matrix@Dimnames[[2]], model = xgb)
 sum.xgb<-sum(importance$Importance)
 importance$Importance<-importance$Importance/sum.xgb
 head(importance)
-#»æÖÆ±äÁ¿ÖØÒªÐÔÍ¼
+#ç»˜åˆ¶å˜é‡é‡è¦æ€§å›¾
 xgb.ggplot.importance(importance)
-#Ñ¡ÔñÖØÒªÐÔ¸ßµÄ±äÁ¿
+#é€‰æ‹©é‡è¦æ€§é«˜çš„å˜é‡
 xgb.ggplot.importance(importance[c(1,2,3,4,5,6,7,8,9,11,14,
                                    36,48,65),])
 xgb.ggplot.importance(importance[1:30,])
-#Ëæ»úÉ­ÁÖ»Ø¹é
+#éšæœºæ£®æž—å›žå½’
 library(randomForest)
 library(foreign)
 gx.rf<-randomForest(V1~V2+V3+V4+V5+V6+V7+V8+
@@ -196,10 +196,10 @@ gx.rf_im[,2] <- gx.rf_im[,2]/sum
 gx.rf_im
 varImpPlot(gx.rf,main = "")
 ?varImpPlot
-#»­»ð²ñ°ôÍ¼
+#ç”»ç«æŸ´æ£’å›¾
 install.packages("ggplot2")
 library(ggplot2)
-data_pic<-read_excel("C:/Users/mjgeng/Desktop/±ÈÌØ±Ò¼°ÆäÏà¹ØÊý¾Ý/5.xlsx")
+data_pic<-read_excel("C:/Users/mjgeng/Desktop/æ¯”ç‰¹å¸åŠå…¶ç›¸å…³æ•°æ®/5.xlsx")
 par(mfrow = c(1,2))
 par(mfrow = c(2,1))
 ggplot(data_pic,aes(IncNodePurity,a))+
@@ -213,7 +213,7 @@ ggplot(data_pic,aes(IncNodePurity,a))+
     axis.text = element_text(size=12,face="plain",color="black"),
     legend.title=element_text(size=12,face="plain",color="black")
   )
-data_pic2<-read_excel("C:/Users/mjgeng/Desktop/±ÈÌØ±Ò¼°ÆäÏà¹ØÊý¾Ý/4.xlsx")
+data_pic2<-read_excel("C:/Users/mjgeng/Desktop/æ¯”ç‰¹å¸åŠå…¶ç›¸å…³æ•°æ®/4.xlsx")
 ggplot(data_pic2,aes(Importance,Feature))+
   geom_segment(aes(x=0, 
                    xend=Importance,
@@ -225,9 +225,9 @@ ggplot(data_pic2,aes(Importance,Feature))+
     axis.text = element_text(size=12,face="plain",color="black"),
     legend.title=element_text(size=12,face="plain",color="black")
   )
-#Ãµ¹åÍ¼
-data_gg_a<-read_excel("C:/Users/mjgeng/Desktop/±ÈÌØ±Ò¼°ÆäÏà¹ØÊý¾Ý/6.xlsx")
-data_gg_b<-read_excel("C:/Users/mjgeng/Desktop/±ÈÌØ±Ò¼°ÆäÏà¹ØÊý¾Ý/7.xlsx")
+#çŽ«ç‘°å›¾
+data_gg_a<-read_excel("C:/Users/mjgeng/Desktop/æ¯”ç‰¹å¸åŠå…¶ç›¸å…³æ•°æ®/6.xlsx")
+data_gg_b<-read_excel("C:/Users/mjgeng/Desktop/æ¯”ç‰¹å¸åŠå…¶ç›¸å…³æ•°æ®/7.xlsx")
 colour <- rainbow(11)
 library(ggplot2)
 plot_xg<-ggplot(data_gg_a,aes(x=factor,y=Importance*600,label=factor))+
