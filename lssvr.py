@@ -108,11 +108,8 @@ def create_data():
 X_train, X_test, y_train, y_test = create_data()
 
 if __name__ == '__main__':
-    # rmse最优
-    # ls_svm = LSSVR(kernel='rbf', C=259.9, gamma=0.488)
-    # explained_variance_score最优
-    ls_svm = LSSVR(kernel='rbf', C=3.77650445e+02, gamma=0.001)
-    # ls_svm = LSSVR(kernel='rbf', C=0.001, gamma=1000)
+    # 选择默认参数
+    ls_svm = LSSVR(kernel='rbf')
     ls_svm.fit(X_train, y_train.astype('str'))
     y_hat = ls_svm.predict(X_test)
     print(y_hat)
@@ -138,8 +135,7 @@ if __name__ == '__main__':
 
 def test():
     X_train, X_test, y_train, y_test = create_data()
-    ls_svm = LSSVR(kernel='rbf', C=3.77650445e+02, gamma=1.00000000e-03)
-    # ls_svm = LSSVR(kernel='rbf', C=0.001, gamma=1000)
+    ls_svm = LSSVR(kernel='rbf')
     ls_svm.fit(X_train, y_train.astype('str'))
     y_hat = ls_svm.predict(X_test)
     return y_hat
