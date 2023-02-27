@@ -1,5 +1,3 @@
-#参考代码：
-# #https://www.zhezhier.com/view/609456846/
 # #第1步：导入模块
 import matplotlib.pyplot as plt
 import numpy as np
