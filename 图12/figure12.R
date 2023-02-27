@@ -1,6 +1,6 @@
 library(readxl)
 col_lssvr<-c("#00008B","#8B2323","#006400","#EEAD0E","#458B00","#483D8B")
-data_lssvr <- read_excel("C:/Users/mjgeng/Desktop/±ÈÌØ±Ò¼°ÆäÏà¹ØÊý¾Ý/ÊÊÓ¦¶ÈÇúÏß/lssvr.xlsx")
+data_lssvr <- read_excel("C:/Users/mjgeng/Desktop/æ¯”ç‰¹å¸åŠå…¶ç›¸å…³æ•°æ®/é€‚åº”åº¦æ›²çº¿/lssvr.xlsx")
 pso_lssvr_6 <- data_lssvr$psolssvr6
 pso_lssvr_11 <- data_lssvr$psolssvr11
 pso_lssvr_27 <- data_lssvr$psolssvr27
@@ -47,7 +47,7 @@ points(c(1:100),woa_lssvr_27,pch=5,col=col_lssvr[6],lwd=4)
 
 
 
-data_svr <- read_excel("C:/Users/mjgeng/Desktop/±ÈÌØ±Ò¼°ÆäÏà¹ØÊý¾Ý/ÊÊÓ¦¶ÈÇúÏß/svr.xlsx")
+data_svr <- read_excel("C:/Users/mjgeng/Desktop/æ¯”ç‰¹å¸åŠå…¶ç›¸å…³æ•°æ®/é€‚åº”åº¦æ›²çº¿/svr.xlsx")
 pso_svr_6 <- data_svr$psosvr6
 pso_svr_11 <- data_svr$psosvr11
 pso_svr_27 <- data_svr$psosvr27
@@ -88,7 +88,7 @@ points(c(1:100),woa_svr_11,pch=4,lwd=4,col=col_lssvr[5])
 points(c(1:100),woa_svr_27,pch=5,lwd=4,col=col_lssvr[6])
 
 
-data_twsvr <- read_excel("C:/Users/mjgeng/Desktop/±ÈÌØ±Ò¼°ÆäÏà¹ØÊý¾Ý/ÊÊÓ¦¶ÈÇúÏß/twsvr.xlsx")
+data_twsvr <- read_excel("C:/Users/mjgeng/Desktop/æ¯”ç‰¹å¸åŠå…¶ç›¸å…³æ•°æ®/é€‚åº”åº¦æ›²çº¿/twsvr.xlsx")
 pso_twsvr_6 <- data_twsvr$psotwsvr6
 pso_twsvr_11 <- data_twsvr$psotwsvr11
 pso_twsvr_27 <- data_twsvr$psotwsvr27
