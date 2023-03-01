@@ -1,3 +1,3 @@
 # Bitcoin-price-prediction
-Bitcoin price prediction model based on XGBoost-WOA-TWSVR/n
+Bitcoin price prediction model based on XGBoost-WOA-TWSVR
 This code set is the relevant code of Price Prediction of Bitcoin Based on Adaptive Feature Selection and Model Optimization. This code set is divided into five subsets corresponding to the five important images in the paper. Figures 7 and 13 are drawn by python, while Figures 9, 10 and 12 are drawn by R. One important note: Figure 13 is tricky to draw.TwinPlane1.py, TwinPlane2.py, KernelFunction.py, svr.py, lssvr.py, and TWSVR.py are example files that are referenced by the main code.svr_matrix.py, lssvr_matrix.py, and twsvr_matrix.py are the main codes, and the generated files are plotted in matrix_plot.py. In addition, Figure 2, Figure 4, Figure 8, Figure 11 are also drawn by R, but they are not shown because the code is relatively simple.
