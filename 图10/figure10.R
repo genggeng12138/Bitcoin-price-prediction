@@ -4,7 +4,6 @@ library(readxl)
 install.packages("ggpattern")
 library(ggpattern)
 #生成模拟的数据
-#data_pic3<-read_excel("D:/研究生/2022深圳杯/acc.xlsx")
 Group <- c(rep("Complete Features(22)",6),rep("XGBoost Features(10)",6),rep("RF Features(7)",6)) #组别变量
 a<-c("WOA-SVR","WOA-LSSVR","WOA-TWSVR","PSO-SVR","PSO-LSSVR","PSO-TWSVR")
 Attribute <- c(a,a,a) #每个组别的属性
