@@ -1,5 +1,5 @@
 library(readxl)
-data_b <- read_excel("C:/Users/mjgeng/Desktop/比特币及其相关数据/1.xlsx")
+data_b <- read_excel("D:/1.xlsx")
 #数据预处理
 data.01<-ts(data_b$V1, frequency = 365,start = 2018)
 par(cex=1.5)
@@ -226,8 +226,8 @@ ggplot(data_pic2,aes(Importance,Feature))+
     legend.title=element_text(size=12,face="plain",color="black")
   )
 #玫瑰图
-data_gg_a<-read_excel("C:/Users/mjgeng/Desktop/比特币及其相关数据/6.xlsx")
-data_gg_b<-read_excel("C:/Users/mjgeng/Desktop/比特币及其相关数据/7.xlsx")
+data_gg_a<-read_excel("D:/6.xlsx")
+data_gg_b<-read_excel("D:/7.xlsx")
 colour <- rainbow(11)
 library(ggplot2)
 plot_xg<-ggplot(data_gg_a,aes(x=factor,y=Importance*600,label=factor))+
