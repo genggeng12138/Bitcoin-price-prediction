@@ -6,9 +6,9 @@ from mpl_toolkits.mplot3d import Axes3D
 import matplotlib
 
 matplotlib.rcParams.update({'font.size': 13})
-evs = pd.read_excel(r'C:\Users\mjgeng\Desktop\比特币及其相关数据\100.xlsx')
-# evs = pd.read_excel(r'C:\Users\mjgeng\Desktop\比特币及其相关数据\svr+matrix.xlsx')
-# evs = pd.read_excel(r'C:\Users\mjgeng\Desktop\比特币及其相关数据\twsvr-matrix.xlsx')
+evs = pd.read_excel(r'D:\100.xlsx')
+# evs = pd.read_excel(r'D:\svr+matrix.xlsx')
+# evs = pd.read_excel(r'D:\twsvr-matrix.xlsx')
 evs = np.array(evs)
 x3, x4 = np.linspace(-9, 11, 20, endpoint=False), np.linspace(-9, 11, 20, endpoint=False)
 x3, x4 = np.meshgrid(x3, x4)
