@@ -8,7 +8,7 @@ from sklearn.metrics import explained_variance_score
 import math
 
 def create_data():
-    data = pd.read_csv(r'C:\Users\mjgeng\Desktop\比特币及其相关数据\指标筛选后数据.csv')
+    data = pd.read_csv(r'D:\指标筛选后数据.csv')
     # print(data)
     return np.array(data.iloc[0:299, 1:11]),  np.array(data.iloc[300:499, 1:11]), np.array(data.iloc[0:299, 0]), np.array(data.iloc[300:499, 0])
     # 前3-最后列，取第2列,
@@ -60,4 +60,4 @@ if __name__ == '__main__':
     # ax.invert_yaxis()  # y轴反向
     plt.show()
     evs = pd.DataFrame(evs)
-    evs.to_excel(r"C:\Users\mjgeng\Desktop\比特币及其相关数据\lssvr+matrix.xlsx")
+    evs.to_excel(r"D:\lssvr+matrix.xlsx")
